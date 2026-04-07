@@ -1,66 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel SPA POS Demo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A custom Point of Sales (POS) single page application built with Laravel 12, Inertia.js, and Vue 3.
 
-## About Laravel
+This project is designed as a portfolio demo for a modern sales and inventory management application. It combines server-side Laravel logic with a client-side Vue 3 interface using Inertia.js for seamless SPA behavior.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel 12**
+- **Inertia.js**
+- **Vue 3**
+- **Vite**
+- **Bootstrap CSS**
+- **Laravel Fortify** for authentication
+- **Spatie Laravel Permission** for role and permission management
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔧 Key Features
 
-## Learning Laravel
+- Customer management
+- Category and item management
+- Sales transactions and sale detail tracking
+- Cart handling for POS flow
+- Profit recording and reporting
+- User authentication and role-based access
+- Single page app navigation with Inertia.js
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📁 Main Modules
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- `app/Models/Customer.php`
+- `app/Models/Category.php`
+- `app/Models/Item.php`
+- `app/Models/Sale.php`
+- `app/Models/SaleDetail.php`
+- `app/Models/Cart.php`
+- `app/Models/Profit.php`
+- `app/Models/User.php`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Installation
 
-## Laravel Sponsors
+1. Clone the repository
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   ```bash
+   git clone <your-repo-url> laravel-spa
+   cd laravel-spa
+   ```
 
-### Premium Partners
+2. Install PHP dependencies
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. Install Node dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   npm install
+   ```
 
-## Code of Conduct
+4. Copy environment file and generate application key
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+5. Configure your database connection in `.env`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Run migrations and seeders
 
-## License
+   ```bash
+   php artisan migrate --seed
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Start the development server
+
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
+
+## 🧩 Project Structure
+
+- `app/Http/Controllers` — backend controllers handling requests
+- `resources/js` — Vue 3 components and Inertia pages
+- `resources/views` — Inertia entry view
+- `routes/web.php` — application routes
+- `database/migrations` — database schema definitions
+- `database/seeders` — sample data and initial roles
+
+## 📌 Notes
+
+- This app uses **Inertia.js** to connect Laravel controllers with Vue 3 pages, keeping the application feeling like a true SPA.
+- The frontend is built with **Vue 3**, supported by packages such as `@inertiajs/vue3`, `vue-router`, `vuex`, and `@fullcalendar/vue3`.
+- The backend includes authentication via **Laravel Fortify** and permissions via **Spatie Laravel Permission**.
+
+## 🧪 Scripts
+
+- `npm run dev` — start Vite development server
+- `npm run build` — build frontend assets for production
+
+## 📌 Recommended Next Steps
+
+- Customize the POS UI and add product images
+- Add reporting dashboards for daily sales and profits
+- Implement real-time stock updates and notifications
+- Add advanced user role management for cashier and admin screens
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
