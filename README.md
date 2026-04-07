@@ -1,5 +1,5 @@
 # Laravel SPA POS Demo
-
+![alt text](image.png)
 A custom Point of Sales (POS) single page application built with Laravel 12, Inertia.js, and Vue 3.
 
 This project is designed as a portfolio demo for a modern sales and inventory management application. It combines server-side Laravel logic with a client-side Vue 3 interface using Inertia.js for seamless SPA behavior.
